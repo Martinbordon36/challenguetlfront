@@ -39,7 +39,7 @@ Este proyecto es una solución al desafío técnico para la posición de Technic
 1. Clonar el repositorio:
 
 ``` bash
-git clone https://github.com/tu-usuario/frontend-lead-challenge.git
+git clone https://github.com/Martinbordon36/challenguetlfront
 cd frontend-lead-challenge
 npm install
 npm run dev 
