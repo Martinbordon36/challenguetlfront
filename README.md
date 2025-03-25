@@ -30,7 +30,9 @@ Este proyecto es una solución al desafío técnico para la posición de Technic
 - [Axios](https://axios-http.com/)
 - [React Query v5](https://tanstack.com/query/latest/)
 - Custom hook `useDebounce` para mejorar UX en búsqueda
-
+- Vitest
+- React Testing Library
+- Variables de entorno (.env)
 
 ---
 
@@ -41,11 +43,16 @@ Este proyecto es una solución al desafío técnico para la posición de Technic
 ``` bash
 git clone https://github.com/Martinbordon36/challenguetlfront.git
 cd frontend-lead-challenge
-npm install
-npm run dev 
+npm install         # Instala las dependencias
+npm run dev         # Inicia la app en modo desarrollo
+npm run build       # Compila el proyecto para producción
+npm run preview     # Previsualiza la versión de producción
+npm run test        # Ejecuta los tests unitarios
+npm run coverage    # Muestra el reporte de cobertura
 ```
 
 Abrí http://localhost:5173 para ver la app en el navegador.
+
 
 ## 🔐 Lógica de autenticación
 
@@ -96,6 +103,24 @@ Cacheo automático de datos
 keepPreviousData para evitar flickering
 Control de estados (loading, error, etc)
 Posibilidad futura de usar infinite scroll (no implementado por simplicidad UX)
+
+# Tests
+
+Este proyecto está cubierto por pruebas unitarias con Vitest y React Testing Library. Se testean:
+
+✅Página de login (Login.tsx)
+✅Página principal (Home.tsx)
+✅ Hook personalizado (useDebounce)
+✅ Rutas protegidas (PrivateRoute)
+✅ AuthContext (AuthContext)
+✅ Flush de Promesas (flushPromises.ts)
+
+Ejecutar tests
+npm run test
+
+Ver cobertura de test
+npm run coverage
+
 
 ## 🧼 Logout
 

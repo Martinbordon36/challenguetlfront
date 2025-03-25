@@ -3,7 +3,7 @@ import { useAuth } from '../auth/AuthContext';
 
 // Instancia base
 const api = axios.create({
-  baseURL: 'https://dummyjson.com',
+  baseURL: import.meta.env.VITE_API_URL || 'https://rickandmortyapi.com/api',
 });
 
 // Interceptor para incluir el token (aunque no lo use la API)

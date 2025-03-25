@@ -11,6 +11,9 @@ const Login = () => {
     login(email, password); // fake login
   };
 
+  const isFormValid = email.trim() !== '' && password.trim() !== '';
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center p-4">
       <form
@@ -18,7 +21,7 @@ const Login = () => {
         className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md"
       >
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-         Challenge TL Frontend
+          Challenge TL Frontend
         </h2>
 
         <div className="mb-4">
@@ -43,7 +46,7 @@ const Login = () => {
           <input
             type="password"
             id="password"
-            placeholder="••••••••"
+            placeholder="Contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -53,10 +56,15 @@ const Login = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-all"
+          disabled={!isFormValid}
+          className={`w-full py-2 rounded-lg font-semibold transition-all ${isFormValid
+              ? 'bg-blue-600 text-white hover:bg-blue-700'
+              : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+            }`}
         >
           Ingresar
         </button>
+
       </form>
     </div>
   );
